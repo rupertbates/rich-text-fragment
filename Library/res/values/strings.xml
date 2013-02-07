@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ACTIVITY_ENTRY_NAME</string>
+    <string name="ok_button_text">Ok</string>
+    <string name="cancel_button_text">Cancel</string>
+    <string name="url_label_text">Url:</string>
+</resources>

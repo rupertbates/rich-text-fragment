@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:minWidth="500dip"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent">
+
+    <TextView
+        android:text="@string/url_label_text"
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"/>
+
+    <EditText
+        android:id="@+id/link"
+        android:layout_height="wrap_content"
+        android:inputType="textUri"
+        android:text="http://www."
+        android:layout_width="fill_parent"/>
+
+    <LinearLayout
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent">
+
+        <Button
+            android:id="@+id/ok"
+            android:layout_width="0dip"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="@string/ok_button_text"/>
+
+        <Button
+            android:id="@+id/cancel"
+            android:layout_width="0dip"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="@string/cancel_button_text"/>
+    </LinearLayout>
+
+</LinearLayout>

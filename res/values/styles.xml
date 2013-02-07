@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <style name="blockquote">
-        <item name="android:textColor">@color/quote_text_colour</item>
-    </style>
-</resources>

@@ -1,4 +1,4 @@
-package com.guardian.widgets.RichTextFragment;
+package com.guardian.widgets.richtext;
 
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
