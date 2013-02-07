@@ -231,4 +231,12 @@ public class RichTextFragment extends Fragment implements View.OnClickListener, 
         str.insert(start, url);
         text.getText().setSpan(span, start, start + url.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
     }
+
+    public Spanned getText(){
+        return text.getText();
+    }
+
+    public String getHtml(){
+        return Html.toHtml(text.getText());
+    }
 }
