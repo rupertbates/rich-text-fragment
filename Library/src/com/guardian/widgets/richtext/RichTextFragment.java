@@ -23,14 +23,14 @@ public class RichTextFragment extends Fragment implements View.OnClickListener, 
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View root = inflater.inflate(R.layout.rich_text_fragment, container);
+        View root = inflater.inflate(R.layout.rich_text_fragment, container, false);
         bold = (CheckBox) root.findViewById(R.id.bold);
         bold.setOnCheckedChangeListener(this);
         italic = (CheckBox) root.findViewById(R.id.italic);
         italic.setOnCheckedChangeListener(this);
         quote = (CheckBox) root.findViewById(R.id.quote);
         quote.setOnCheckedChangeListener(this);
-        Button link = (Button) root.findViewById(R.id.link);
+        View link = root.findViewById(R.id.link);
         link.setOnClickListener(this);
         html = (TextView) root.findViewById(R.id.html);
         text = (EditText) root.findViewById(R.id.text);
@@ -230,6 +230,12 @@ public class RichTextFragment extends Fragment implements View.OnClickListener, 
         int start = text.getSelectionStart();
         str.insert(start, url);
         text.getText().setSpan(span, start, start + url.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+    }
+
+    public void setText(String str){
+        text.setText(str);
+        int length = str.length();
+        text.setSelection(length, length);
     }
 
     public Spanned getText(){

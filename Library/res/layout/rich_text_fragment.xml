@@ -2,55 +2,59 @@
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:orientation="vertical"
+              android:minHeight="400dip"
               android:layout_width="fill_parent"
               android:layout_height="fill_parent">
 
     <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="fill_parent"
-        android:layout_gravity="center">
+        android:layout_height="wrap_content"
+        android:padding="5dip"
+        android:layout_gravity="left|center_vertical">
 
         <CheckBox
             android:id="@+id/bold"
-            android:text="Bold"
+            android:button="@drawable/bold_button"
+            style="@style/formatButton"
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"/>
 
         <CheckBox
             android:id="@+id/italic"
-            android:text="Italic"
+            android:button="@drawable/italic_button"
+            style="@style/formatButton"
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"/>
 
         <CheckBox
             android:id="@+id/quote"
-            android:text="Quote"
+            style="@style/formatButton"
+            android:button="@drawable/quote_button"
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"/>
-        <!--<Button android:id="@+id/quote"-->
-        <!--android:text="Quote"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_width="wrap_content"/>-->
-        <Button
-            android:id="@+id/link"
-            android:text="Link"
-            android:layout_height="wrap_content"
-            android:layout_width="wrap_content"/>
-    </LinearLayout>
 
+        <CheckBox
+            android:id="@+id/link"
+            android:button="@drawable/link"
+            style="@style/formatButton"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:contentDescription="@string/insert_link_description"/>
+    </LinearLayout>
     <EditText
         android:id="@+id/text"
-        android:paddingTop="5dip"
-        android:paddingBottom="5dip"
+        android:padding="5dip"
         android:gravity="top"
         android:minLines="4"
-        android:layout_height="wrap_content"
+        android:layout_height="0dip"
+        android:layout_weight="1"
         android:layout_width="fill_parent"
         android:selectAllOnFocus="true"
         android:focusableInTouchMode="true"
         android:inputType="textWebEditText|textMultiLine"/>
 
     <TextView
+        android:visibility="gone"
         android:id="@+id/html"
         android:paddingTop="5dip"
         android:paddingBottom="5dip"

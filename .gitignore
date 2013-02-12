@@ -1,4 +1,5 @@
 .idea/
 gen/
 out/
+bin/
 .DS_Store

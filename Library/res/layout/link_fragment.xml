@@ -7,6 +7,7 @@
               android:layout_height="fill_parent">
 
     <TextView
+        android:paddingLeft="7dip"
         android:text="@string/url_label_text"
         android:layout_height="wrap_content"
         android:layout_width="fill_parent"/>

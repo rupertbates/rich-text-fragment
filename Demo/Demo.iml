@@ -47,7 +47,7 @@
         <SOURCES />
       </library>
     </orderEntry>
-    <orderEntry type="module" module-name="Library" />
+    <orderEntry type="module" module-name="RichTextFragment" />
   </component>
 </module>
 
