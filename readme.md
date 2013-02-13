@@ -3,6 +3,6 @@ rich-text-fragment
 
 A rich text editor for Android
 
-![alt text](https://github.com/rupertbates/rich-text-fragment/blob/master/Screenshot.png "Screenshot 1")
+![Screen shot](https://github.com/rupertbates/rich-text-fragment/blob/master/Screenshot.png?raw=true)
 
 See the demo project for usage
