@@ -43,6 +43,7 @@ public class RichTextFragment extends Fragment implements View.OnClickListener, 
     public void onClick(View view) {
         if (view.getId() == R.id.text) {
             Log.d(TAG, "EditText clicked");
+            debugPrint();
             setButtonState();
         } else if (view.getId() == R.id.link) {
             Log.d(TAG, "Link button clicked");
@@ -51,6 +52,21 @@ public class RichTextFragment extends Fragment implements View.OnClickListener, 
             fragment.show(getFragmentManager(), LinkDialogFragment.TAG);
 
         }
+    }
+    private void debugPrint(){
+        Editable str = text.getText();
+        Object[] spans = str.getSpans(0, str.length(), Object.class);
+        for(Object o : spans){
+            if(o.getClass() == StyleSpan.class){
+                StyleSpan span = (StyleSpan) o;
+                Log.v(TAG, "Style " + span.getStyle() + " at " + str.getSpanStart(span) + " to " + str.getSpanEnd(span));
+            }if(o.getClass() == QuoteSpan.class){
+                QuoteSpan span = (QuoteSpan) o;
+                Log.v(TAG, "Quote at " + str.getSpanStart(span) + " to " + str.getSpanEnd(span));
+            }
+        }
+        Log.v(TAG, "Selection = " + text.getSelectionStart() + " to " + text.getSelectionEnd());
+
     }
 
     private void setButtonState() {
@@ -189,13 +205,12 @@ public class RichTextFragment extends Fragment implements View.OnClickListener, 
             Editable str = text.getText();
             StyleSpan[] spans = str.getSpans(start + 1, start + 1, StyleSpan.class);
             for (StyleSpan span : spans) {
-
                 int spanStart = str.getSpanStart(span);
                 int spanEnd = str.getSpanEnd(span);
                 Log.v(TAG, "Span start: " + spanStart + ", Span end: " + spanEnd);
                 str.removeSpan(span);
                 //if(spanEnd == start)
-                str.setSpan(span, spanStart + 1, spanEnd, Spanned.SPAN_INCLUSIVE_INCLUSIVE);
+                str.setSpan(span, Math.min(spanStart + 1, spanEnd), spanEnd, Spanned.SPAN_INCLUSIVE_INCLUSIVE);
 
             }
             Log.d(TAG, "number of spans at start =" + spans.length);
